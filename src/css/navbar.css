@@ -1,0 +1,38 @@
+.navbar{
+    background-color: #333;
+    overflow: hidden;
+    width: 15%;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+   padding: 1rem;
+
+}
+
+.navbar ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: .5rem;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    display: block;
+}
+.navbar a:hover{
+    background-color: #575757;
+}
+.navbar a.active{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.bottom-nav{
+    text-align: center;
+    font-size: 12px;
+}
