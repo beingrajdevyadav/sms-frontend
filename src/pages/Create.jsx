@@ -1,39 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/create.css'
+import axios from 'axios';
+import { BASE_API_URL } from '../utils/constants';
 
 
 const Create = () => {
+  const [student, setStudent] = useState({
+    name: "",
+    age: "",
+    city: "",
+    course: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  // handle change 
+  const handleChange = (e) => {
+    setStudent({
+      ...student,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // on submit
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(`${BASE_API_URL}`, student);
+      console.log(res.data);
+      
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+
   return (
     <div className='create'>
       <h2>Add New Student </h2>
-     <hr />
+      <hr />
 
-     <form >
-      <div className="form-control">
-        <label htmlFor="">Student Name : </label>
-        <input type="text" placeholder='Enter Student Name' />
-      </div>
-      <div className="form-control">
-        <label htmlFor="">Student Age : </label>
-        <input type="text" placeholder='Enter Student Age' />
-      </div>
-      <div className="form-control">
-        <label htmlFor="">Student City : </label>
-        <input type="text" placeholder='Enter Student City' />
-      </div>
-      <div className="form-control">
-        <label htmlFor="">Student Course : </label>
-        <input type="text" placeholder='Enter Student Course' />
-      </div>
-      
+      <form  onSubmit={handleSubmit}>
+        <div className="form-control">
+          <label htmlFor="">Student Name : </label>
+          <input type="text" name='name' onChange={handleChange}  value={student.name} autoComplete='off' placeholder='Enter Student Name' />
+        </div>
+        <div className="form-control">
+          <label htmlFor="">Student Age : </label>
+          <input type="text" name='age' onChange={handleChange} value={student.age} autoComplete='off' placeholder='Enter Student Age' />
+        </div>
+        <div className="form-control">
+          <label htmlFor="">Student City : </label>
+          <input type="text" name='city' onChange={handleChange} value={student.city} autoComplete='off' placeholder='Enter Student City' />
+        </div>
+        <div className="form-control">
+          <label htmlFor="">Student Course : </label>
+          <input type="text" name='course' onChange={handleChange} value={student.course} autoComplete='off' placeholder='Enter Student Course' />
+        </div>
 
-      <div className="btn-controls">
-        <button type="reset" className='bg-dark'> <i className="fa-solid fa-arrow-rotate-left"></i> Reset</button>
-        <button type="submit" className='bg-green'><i className="fa-solid fa-plus"></i> Add Student</button>
-      </div>
-     </form>
+
+        <div className="btn-controls">
+          <button type="reset" className='bg-dark'> <i className="fa-solid fa-arrow-rotate-left"></i> Reset</button>
+          <button type="submit" className='bg-green'><i className="fa-solid fa-plus"></i> Add Student</button>
+        </div>
+      </form>
     </div>
   )
-} 
+}
 
 export default Create
