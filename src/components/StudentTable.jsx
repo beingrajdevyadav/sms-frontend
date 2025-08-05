@@ -18,8 +18,8 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
         </thead>
         <tbody>
           {
-            students.length?(
-              students.map((student)=>(
+            students.length ? (
+              students.map((student) => (
                 <tr key={student._id}>
                   <td>{student.name}</td>
                   <td>{student.age}</td>
@@ -28,16 +28,23 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
                   <td>{new Date(student.admissionDate).toLocaleDateString()}</td>
                 </tr>
               ))
-            ): (
+            ) : (
               <tr>
-                <td style={{textAlign:"center"}} colSpan={5}>No students found</td>
+                <td style={{ textAlign: "center" }} colSpan={5}>No students found</td>
               </tr>
             )
           }
         </tbody>
       </table>
 
-      
+      {/* Pagination  */}
+      <div>
+        <button onClick={() => setPage((p) => Math.max(p - 1, 1))} disabled={page === 1}>
+          Previous
+        </button>
+        <p>Page {page} of {totalPages}</p>
+        <button onClick={() => setPage((p) => Math.min(p + 1, totalPages))} disabled={page === totalPages}>Next</button>
+      </div>
     </div>
   )
 }
