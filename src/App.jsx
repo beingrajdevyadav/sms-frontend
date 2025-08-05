@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import axios from 'axios';
+import FilterForm from './components/FilterForm';
+import StudentTable from './components/StudentTable';
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -26,9 +28,27 @@ function App() {
     fetchStudents();
   }, [query, page]);
 
+
+  // handle filter
+  const handleFilter = (filters)=>{
+    setQuery(filters);
+    setPage(1);
+  };
+
   return (
     <>
-      <h1>Heloo, World</h1>
+      <h1>SMS</h1>
+      <p>Student Management System</p>
+      <hr />
+      <FilterForm onFilter={handleFilter} />
+
+      <StudentTable
+      students={students}
+      page={page}
+      totalPages={totalPages}
+      setPage={setPage}
+      setQuery={setQuery}
+      />
     </>
   )
 }

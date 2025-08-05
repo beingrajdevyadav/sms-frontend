@@ -5,5 +5,5 @@ const StudentTable = () => {
     <div>StudentTable</div>
   )
 }
-
+ 
 export default StudentTable
