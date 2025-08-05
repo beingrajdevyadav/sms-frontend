@@ -1,8 +1,10 @@
 import React from 'react'
+import '../css/create.css'
+
 
 const Create = () => {
   return (
-    <div>
+    <div className='create'>
       <h2>Add New Student </h2>
      <hr />
 
@@ -26,8 +28,8 @@ const Create = () => {
       
 
       <div className="btn-controls">
-        <button type="reset">Reset</button>
-        <button type="submit">Add Student</button>
+        <button type="reset" className='bg-dark'> <i className="fa-solid fa-arrow-rotate-left"></i> Reset</button>
+        <button type="submit" className='bg-green'><i className="fa-solid fa-plus"></i> Add Student</button>
       </div>
      </form>
     </div>
