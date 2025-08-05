@@ -9,7 +9,7 @@ function Home() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  // to fetch students
+  // to fe tch students
 
   const fetchStudents = async () => {
     try {
