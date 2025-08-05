@@ -11,16 +11,18 @@ import About from './pages/About'
 
 const App = () => {
   return (
-    <div>
-      <Navbar/>
+    <div className='App'>
+      <Navbar />
+      <div className="current-page">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/edit' element={<Edit />} />
+          <Route path='/delete' element={<Delete />} />
+          <Route path='*' element={<About />} />
+        </Routes>
+      </div>
 
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/create' element={<Create/>} />
-        <Route path='/edit' element={<Edit/>} />
-        <Route path='/delete' element={<Delete/>} />
-        <Route path='*' element={<About/>} />
-      </Routes>
     </div>
   )
 }

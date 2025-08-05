@@ -18,7 +18,7 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
         </thead>
         <tbody>
           {
-            students.length ? (
+            students?.length ? (
               students.map((student) => (
                 <tr key={student._id}>
                   <td>{student.name}</td>

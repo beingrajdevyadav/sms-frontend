@@ -15,7 +15,8 @@ function Home() {
     try {
       const params = { ...query, page };
       const res = await axios.get("http://localhost:5000/students", { params });
-      setStudents(res.data.students);
+      console.log("Students Fetched : ", res.data);
+      setStudents(res.data);
       setTotalPages(res.data.totalPages);
 
     } catch (error) {
