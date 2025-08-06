@@ -32,6 +32,8 @@ const handleSubmit = async (e)=>{
   }
 }
   return (
+
+    <>
     <div className='create'>
       <h2>Delete Student Details </h2>
      <hr />
@@ -49,6 +51,15 @@ const handleSubmit = async (e)=>{
       </div>
      </form>
     </div>
+
+    {
+      isloading && <Loader/>
+    }
+    {
+      isSuccess && <SuccessPopup data={data} message={"Deleted Successfully!"} handleClick={()=>setIsSuccess(false)} />
+    }
+    </>
+
   )
 } 
 
