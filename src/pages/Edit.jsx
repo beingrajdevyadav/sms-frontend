@@ -27,6 +27,7 @@ const Edit = () => {
 
       setTimeout(() => {
         setIsLoading(false);
+        setStudentID('');
         setIsEditable(true);
       }, 2000);
     } catch (error) {
@@ -62,7 +63,7 @@ const Edit = () => {
         isloading && <Loader />
       }
       {
-        isSuccess && <SuccessPopup data={data} message={"Updated successfully!"} handleClick={() => setIsSuccess(false)} />
+        isSuccess && <SuccessPopup data={data} message={"Updated Successfully!"} handleClick={() => setIsSuccess(false)} />
       }
     </>
 
