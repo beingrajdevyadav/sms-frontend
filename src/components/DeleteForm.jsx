@@ -35,23 +35,16 @@ const DeleteForm = ({ data, setIsDeletable, setIsLoading, setIsSuccess }) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="form-control">
-                    <label htmlFor="">Student Id : {data._id}</label>
+                    <p htmlFor="">Student Id : {data._id}</p>
+                    <p htmlFor="">Student Name : {data.name}</p>
+                    <p htmlFor="">Student Age : {data.age}</p>
+                    <p htmlFor=""> Student City : {data.city}</p>
+                    <p htmlFor=""> Student Course : {data.course}</p>
                 </div>
-                <div className="form-control">
-                    <label htmlFor="">Student Name : {data.name}</label>
-                </div>
-                <div className="form-control">
-                    <label htmlFor="">Student Age : {data.age}</label>
-                </div>
-                <div className="form-control">
-                    <label htmlFor=""> Student City : {data.city}</label>
-                </div>
-                <div className="form-control">
-                    <label htmlFor=""> Student Course : {data.course}</label>
-                </div>
+              
 
                 <div className="form-control">
-                    <label htmlFor="">Type <b>{data.name}</b> To Delete! </label>
+                    <p htmlFor="">Type <b>{data.name}</b> To Delete! </p>
                     <input type="text" placeholder={data.name} value={str} onChange={(e) => setStr(e.target.value)} />
                 </div>
 
