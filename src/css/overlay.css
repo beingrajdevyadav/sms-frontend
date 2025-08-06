@@ -1,0 +1,61 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.295);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay button {
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.overlay button:hover {
+    background-color: #45a049;
+}
+
+.loader img {
+    width: 120px;
+    padding: .5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px #00000022;
+
+}
+
+.success-popup {
+    background-color: #fff;
+    padding: 30px;
+    width: 35%;
+    height: 45vh;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px #00000022;
+    text-align: center;
+
+}
+
+.success-popup h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.success-popup p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.success-popup button {
+    width: 100%;
+    margin: 1rem 0;
+}

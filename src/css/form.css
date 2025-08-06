@@ -23,6 +23,7 @@
     border: 1px solid #ccc;
     border-radius: 3px;
     outline: none;
+    color: #555;
 }
 
  .form-control input:focus {
