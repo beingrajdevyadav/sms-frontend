@@ -1,16 +1,16 @@
 import React from 'react'
+import "../css/table.css"
 
 const StudentTable = ({ students, page, totalPages, setPage }) => {
   return (
     <div>
-      <h2>Students</h2>
-      <hr />
+      
 
-      <table border={1} cellPadding={10}>
+      <table className='table'  border={1} cellPadding={10}>
         <thead>
           <tr>
-            <th>Name</th>
             <th>Student ID</th>
+            <th>Name</th>
             <th>Age</th>
             <th>City</th>
             <th>Course</th>
@@ -22,8 +22,8 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
             students?.length ? (
               students.map((student) => (
                 <tr key={student._id}>
-                  <td>{student.name}</td>
                   <td>{student._id}</td>
+                  <td>{student.name}</td>
                   <td>{student.age}</td>
                   <td>{student.city}</td>
                   <td>{student.course}</td>
