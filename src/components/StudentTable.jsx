@@ -10,6 +10,7 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Student ID</th>
             <th>Age</th>
             <th>City</th>
             <th>Course</th>
@@ -22,6 +23,7 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
               students.map((student) => (
                 <tr key={student._id}>
                   <td>{student.name}</td>
+                  <td>{student._id}</td>
                   <td>{student.age}</td>
                   <td>{student.city}</td>
                   <td>{student.course}</td>
