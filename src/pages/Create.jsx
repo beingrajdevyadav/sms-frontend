@@ -12,7 +12,8 @@ const Create = () => {
     course: "",
   });
 
-  const [loading, setLoading] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // handle change 
   const handleChange = (e) => {
