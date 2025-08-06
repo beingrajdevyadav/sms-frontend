@@ -1,10 +1,12 @@
 import React from 'react'
 import "../css/table.css"
 
-const StudentTable = ({ students, page, totalPages, setPage }) => {
+const StudentTable = ({ students }) => {
   return (
     <div>
       
+      <h3>Student Management System</h3>
+      <hr />
 
       <table className='table'  border={1} cellPadding={10}>
         <thead>
@@ -38,16 +40,7 @@ const StudentTable = ({ students, page, totalPages, setPage }) => {
           }
         </tbody>
       </table>
-
-      {/* Pagination  */}
-      <div>
-        <button onClick={() => setPage((p) => Math.max(p - 1, 1))} disabled={page === 1}>
-          Previous
-        </button>
-        <p>Page {page} of {totalPages}</p>
-        <button onClick={() => setPage((p) => Math.min(p + 1, totalPages))} disabled={page === totalPages}>Next</button>
-      </div>
-    </div>
+</div>
   )
 }
 
