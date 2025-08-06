@@ -13,17 +13,31 @@ const Delete = () => {
   const [isDeletable, setIsDeletable] = useState(false);
   const [data, setData] = useState({});
 
+// handle submit
+const handleSubmit = async (e)=>{
+  e.preventDefault();
 
+  setIsLoading(true);
+  try {
+    const res = await axios.get(`${BASE_API_URL}/${studentId}`);
+    setData(res.data);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      setStudentId('');
+      setIsDeletable(true);
+    }, 2000);
+  } catch (error) {
+    console.log("Data Fetching Error : ", error.message);
+  }
+}
   return (
     <div className='create'>
       <h2>Delete Student Details </h2>
      <hr />
 
-{
-  
-}
 
-     <form >
+     <form onSubmit={handleSubmit}>
       <div className="form-control">
         <label htmlFor="">Student ID : </label>
         <input type="text" value={studentId} onChange={(e)=>setStudentId(e.target.value)}  placeholder='Enter Student Id' />
