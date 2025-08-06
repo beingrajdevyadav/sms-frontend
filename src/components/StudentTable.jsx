@@ -3,7 +3,7 @@ import "../css/table.css"
 
 const StudentTable = ({ students }) => {
   return (
-    <div>
+    <div className='student-table'>
       
       <h3>Student Management System</h3>
       <hr />
@@ -34,7 +34,7 @@ const StudentTable = ({ students }) => {
               ))
             ) : (
               <tr>
-                <td style={{ textAlign: "center" }} colSpan={5}>No students found</td>
+                <td style={{ textAlign: "center" }} colSpan={6}>No students found</td>
               </tr>
             )
           }

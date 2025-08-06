@@ -52,7 +52,7 @@ const Delete = () => {
 
               <div className="btn-controls">
                 <button type="reset" onClick={() => setStudentId('')} className='bg-dark'> <i className="fa-solid fa-arrow-rotate-left"></i> Reset</button>
-                <button type="submit" className='bg-green'><i className="fa-solid fa-plus"></i> Add Student</button>
+                <button type="submit" className='bg-green'><i className="fa-solid fa-magnifying-glass"></i> Fetch Details</button>
               </div>
             </form>
           )
