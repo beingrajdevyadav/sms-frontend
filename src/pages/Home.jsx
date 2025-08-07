@@ -29,7 +29,9 @@ function Home() {
 
   return (
     <>
+    
       <StudentTable
+        setStudents={setStudents}
       students={students}
       />
     </>

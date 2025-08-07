@@ -1,15 +1,19 @@
-import React from 'react'
-import "../css/table.css"
 
-const StudentTable = ({ students }) => {
-  
+import "../css/table.css"
+import FilterForm from './FilterForm'
+
+
+const StudentTable = ({ students, setStudents }) => {
+
   return (
     <div className='student-table'>
-      
+
       <h3>Student Management System</h3>
       <hr />
 
-      <table className='table'  border={1} cellPadding={10}>
+      <FilterForm setStudents={setStudents} />
+
+      <table className='table' border={1} cellPadding={10}>
         <thead>
           <tr>
             <th>Student ID</th>
@@ -41,7 +45,7 @@ const StudentTable = ({ students }) => {
           }
         </tbody>
       </table>
-</div>
+    </div>
   )
 }
 
