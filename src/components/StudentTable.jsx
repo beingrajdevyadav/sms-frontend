@@ -3,7 +3,7 @@ import "../css/table.css"
 import FilterForm from './FilterForm'
 
 
-const StudentTable = ({ students, setStudents }) => {
+const StudentTable = ({ students, setStudents , setIsLoading}) => {
 
   return (
     <div className='student-table'>
@@ -11,7 +11,7 @@ const StudentTable = ({ students, setStudents }) => {
       <h3>Student Management System</h3>
       <hr />
 
-      <FilterForm setStudents={setStudents} />
+      <FilterForm setStudents={setStudents} setIsLoading={setIsLoading} />
 
       <table className='table' border={1} cellPadding={10}>
         <thead>

@@ -1,12 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { BASE_API_URL } from '../utils/constants';
-import Loader from './Loader';
 
 
-const FilterForm = ({ setStudents }) => {
 
-  const [loading, setLoading] = useState(false);
+const FilterForm = ({ setStudents, setIsLoading }) => {
   const [filters, setFilters] = useState({
     name: "",
     city: "",
@@ -30,20 +28,19 @@ const FilterForm = ({ setStudents }) => {
   // handle fiter submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
     // console.log("Filters applied:", filters);
     try {
       const res = await axios.get(`${BASE_API_URL}/search`, { params: filters });
       // console.log(res.data);
       setStudents(res.data);
 
-
     } catch (err) {
       console.error("Error fetching students:", err);
     } finally {
       setTimeout(() => {
-        setLoading(false);
-      }, 3000);
+        setIsLoading(false);
+      }, 2000);
     }
 
   }
@@ -72,14 +69,12 @@ const FilterForm = ({ setStudents }) => {
         </select>
 
         <button type="submit">
-          {loading ? "Loading..." : "Apply"}
+          Apply Filters
         </button>
 
       </form>
 
-      {
-        loading && <Loader />
-      }
+     
     </>
 
   )

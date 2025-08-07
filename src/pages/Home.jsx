@@ -1,23 +1,28 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import StudentTable from '../components/StudentTable';
+import { BASE_API_URL } from '../utils/constants';
+import Loader from '../components/Loader';
 
 function Home() {
   const [students, setStudents] = useState([]);
-  
+  const [isLoading, setIsLoading] = useState(false);
 
-  // to fe tch students
+  // to fetch students
 
   const fetchStudents = async () => {
+   
+    setStudents([]);
     try {
-      const res = await axios.get("http://localhost:5000/students");
+      const res = await axios.get(`${BASE_API_URL}`);
       // console.log("Students Fetched : ", res.data);
       setStudents(res.data);
-      
+
 
     } catch (error) {
       console.log("Error Fetching Students : ", error);
     }
+   
   };
 
   useEffect(() => {
@@ -25,15 +30,20 @@ function Home() {
   }, []);
 
 
- 
+
 
   return (
     <>
-    
+
       <StudentTable
         setStudents={setStudents}
-      students={students}
+        students={students}
+        setIsLoading={setIsLoading}
       />
+
+      {
+        isLoading && <Loader />
+      }
     </>
   )
 }
