@@ -89,7 +89,7 @@ const Create = () => {
         isloading && <Loader />
       }
       {
-        isSuccess && <SuccessPopup handleClick={() => setIsSuccess(false)} data={data} message={"Congratulations! 🎉 Student created successfully!"} />
+        isSuccess && <SuccessPopup handleClick={() => setIsSuccess(false)} data={data} message={"Congratulations! 🎉 Student Added Successfully!"} />
       }
     </>
 

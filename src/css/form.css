@@ -64,6 +64,13 @@
     transition: all 0.3s ease;
 }
 
+.bg-red.disabled{
+    cursor: not-allowed;
+    background-color: #777;
+}
+.bg-red.disabled:hover{
+    background-color: #555;
+}
 .bg-red:hover {
     background-color: #e53935;
 }

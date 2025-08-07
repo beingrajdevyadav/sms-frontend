@@ -2,6 +2,7 @@ import React from 'react'
 import "../css/table.css"
 
 const StudentTable = ({ students }) => {
+  
   return (
     <div className='student-table'>
       
@@ -29,7 +30,7 @@ const StudentTable = ({ students }) => {
                   <td>{student.age}</td>
                   <td>{student.city}</td>
                   <td>{student.course}</td>
-                  <td>{new Date(student.admissionDate).toLocaleDateString()}</td>
+                  <td>{new Date(student.admissionDate).toISOString().slice(0, 10)}</td>
                 </tr>
               ))
             ) : (

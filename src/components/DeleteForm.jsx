@@ -5,7 +5,7 @@ import { BASE_API_URL } from '../utils/constants';
 const DeleteForm = ({ data, setIsDeletable, setIsLoading, setIsSuccess }) => {
 
     const [str, setStr] = useState("");
-
+const isDisabled = str.trim() !== data.name;
     // handle submit
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -50,7 +50,7 @@ const DeleteForm = ({ data, setIsDeletable, setIsLoading, setIsSuccess }) => {
 
                 <div className="btn-controls">
                     <button type='button' className="bg-dark">Cancel</button>
-                    <button type='submit' className='bg-red'>Delete</button>
+                    <button type='submit' disabled={isDisabled} className={`bg-red ${isDisabled? "disabled" : ""}`}>Delete</button>
                 </div>
             </form>
         </div>
