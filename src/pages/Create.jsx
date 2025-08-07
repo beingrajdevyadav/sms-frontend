@@ -4,6 +4,7 @@ import axios from 'axios';
 import { BASE_API_URL } from '../utils/constants';
 import Loader from '../components/Loader';
 import SuccessPopup from '../components/SuccessPopup';
+import { warnToast } from '../utils/toasts';
 
 
 const Create = () => {
@@ -31,6 +32,13 @@ const Create = () => {
     e.preventDefault();
 
     setIsLoading(true);
+
+    if (!student.name) {
+      setIsLoading(false);
+      warnToast("Enter Student Name!");
+      return;
+
+    }
     try {
       const res = await axios.post(`${BASE_API_URL}`, student);
       console.log(res.data);
@@ -41,7 +49,7 @@ const Create = () => {
         city: "",
         course: "",
       });
-      
+
       setTimeout(() => {
         setData(res.data);
         setIsLoading(false);
