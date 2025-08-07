@@ -4,6 +4,7 @@ import axios from 'axios'
 import Loader from '../components/Loader'
 import SuccessPopup from '../components/SuccessPopup'
 import DeleteForm from '../components/DeleteForm'
+import { warnToast } from '../utils/toasts'
 
 
 
@@ -17,6 +18,16 @@ const Delete = () => {
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+     if(!studentId){
+          warnToast("Enter Student ID!");
+          return;
+        }
+    
+        if(studentId.length !== 24){
+          warnToast("Invalid Student ID!");
+          return;
+        }
 
     setIsLoading(true);
     try {

@@ -29,6 +29,7 @@ const Edit = () => {
       warnToast("Invalid Student ID!");
       return;
     }
+    
     setIsLoading(true);
     try {
       const res = await axios.get(`${BASE_API_URL}/${studentID}`);
