@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { BASE_API_URL } from '../utils/constants';
-
+import '../css/filter-form.css'
 
 
 const FilterForm = ({ setStudents, setIsLoading }) => {
@@ -49,7 +49,7 @@ const FilterForm = ({ setStudents, setIsLoading }) => {
   return (
 
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='filter-form'>
         <input type="text" autoComplete='off' placeholder='Enter Name' name='name' onChange={handleChange} />
         <input type="text" autoComplete='off' placeholder='Enter City' name='city' onChange={handleChange} />
         <input type="text" autoComplete='off' placeholder='Enter Course' name='course' onChange={handleChange} />
@@ -69,7 +69,7 @@ const FilterForm = ({ setStudents, setIsLoading }) => {
         </select>
 
         <button type="submit">
-          Apply Filters
+         <i className="fa-solid fa-magnifying-glass"></i>  Apply Filters
         </button>
 
       </form>

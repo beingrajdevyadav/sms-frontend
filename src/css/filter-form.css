@@ -1,0 +1,38 @@
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filter-form input,
+.filter-form select,
+.filter-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+    max-width: 200px;
+}
+
+.filter-form button {
+    background-color: #4CAF50;
+
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-form button:hover {
+    background-color: #45a049;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form input:focus,
+.filter-form select:focus,
+.filter-form button:focus {
+    border-color: #007bff;
+    outline: none;
+}
