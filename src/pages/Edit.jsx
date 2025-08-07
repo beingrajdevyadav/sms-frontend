@@ -4,6 +4,7 @@ import axios from 'axios';
 import Loader from '../components/Loader'
 import SuccessPopup from '../components/SuccessPopup'
 import EditForm from '../components/EditForm';
+import { warnToast } from '../utils/toasts';
 
 
 
@@ -18,6 +19,16 @@ const Edit = () => {
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(!studentID){
+      warnToast("Enter Student ID!");
+      return;
+    }
+
+    if(studentID.length !== 24){
+      warnToast("Invalid Student ID!");
+      return;
+    }
     setIsLoading(true);
     try {
       const res = await axios.get(`${BASE_API_URL}/${studentID}`);

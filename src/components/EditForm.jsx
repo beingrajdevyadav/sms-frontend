@@ -53,7 +53,7 @@ const EditForm = ({ data, setData, setIsEditable, setIsLoading, setIsSuccess, })
 
                 <div className="btn-controls">
                     <button type="reset" className='bg-dark' onClick={() => setStudentData(data)}> <i className="fa-solid fa-arrow-rotate-left"></i> Reset</button>
-                    <button type="submit" className='bg-green'><i className="fa-solid fa-plus"></i> Edit & Save</button>
+                    <button type="submit" className='bg-green'><i className="fa-solid fa-file"></i> Edit & Save</button>
                 </div>
             </form>
         </div>

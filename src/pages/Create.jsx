@@ -31,14 +31,30 @@ const Create = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsLoading(true);
 
     if (!student.name) {
-      setIsLoading(false);
       warnToast("Enter Student Name!");
       return;
+    };
 
-    }
+    if (!student.age) {
+      warnToast("Enter Student Age!");
+      return;
+    };
+
+    if(!student.city){
+      warnToast("Enter Student City!");
+      return;
+    };
+
+    if(!student.course){
+      warnToast("Enter Course Name!");
+      return;
+    };
+
+
+    setIsLoading(true);
+
     try {
       const res = await axios.post(`${BASE_API_URL}`, student);
       console.log(res.data);
